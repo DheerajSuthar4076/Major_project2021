@@ -169,7 +169,7 @@ def response_changeslot(request):
 def changeafterbook(request):
 
     if request.method=='POST':
-        mode = "TEST"
+        mode = "PROD"
 
         quiz = request.POST['slot']
 
@@ -188,7 +188,7 @@ def changeafterbook(request):
         temp = str(request.user.username)+str('_')+str(request.user.order_number)
 
         postData = {
-                  "appId" : '21845d9c06b478a19ac3040ce54812',
+                  "appId" : '58782c06ab69a52be2f34bd7b28785',
                   "orderId" : temp,
                   "orderAmount" : '30',
                   "orderCurrency" : 'INR',
@@ -227,7 +227,7 @@ def changeafterbook(request):
 
             url = "https://www.cashfree.com/checkout/post/submit"
         else:
-            url = "https://test.cashfree.com/billpay/checkout/post/submit"
+            url = "https://prod.cashfree.com/billpay/checkout/post/submit"
 
         context = {
             'postData' : postData,
@@ -396,18 +396,18 @@ def bookslot(request):
 def profile(request):
     return render(request,'dashboard.html')
 
-secretKey = "9be8e477e0c70b0b63b654e2e95e2d2219e318ee"
+secretKey = "bb221fbe28841cb1a7eb30599b5dcad2a3e8dae2"
 #@app.route('/request', methods=["POST"])
 def handlerequest(request):
 
-    mode = "TEST" # <-------Change to TEST for test server, PROD for production
+    mode = "PROD" # <-------Change to TEST for test server, PROD for production
     print('win')
 
     if request.method =='POST':
         print('lost')
 
         postData = {
-                  "appId" : '21845d9c06b478a19ac3040ce54812',
+                  "appId" : '58782c06ab69a52be2f34bd7b28785',
                   "orderId" : request.POST['orderId'],
                   "orderAmount" : request.POST['orderAmount'],
                   "orderCurrency" : 'INR',
@@ -432,7 +432,7 @@ def handlerequest(request):
 
             url = "https://www.cashfree.com/checkout/post/submit"
         else:
-            url = "https://test.cashfree.com/billpay/checkout/post/submit"
+            url = "https://prod.cashfree.com/billpay/checkout/post/submit"
 
         context = {
             'postData' : postData,
@@ -559,7 +559,7 @@ print(dict_pdf)
 
 def subscribe(request):
     print ("hibhai")
-    mode = "TEST"
+    mode = "PROD"
     student = request.user
     stud=Student.objects.get(pk=student.id)
     if request.method=='POST':
@@ -604,7 +604,7 @@ def subscribe(request):
         print(temp)
 
         postData = {
-                  "appId" : '21845d9c06b478a19ac3040ce54812',
+                  "appId" : '58782c06ab69a52be2f34bd7b28785',
                   "orderId" : temp,
                   "orderAmount" : request.POST['orderAmount'],
                   "orderCurrency" : 'INR',
@@ -634,7 +634,7 @@ def subscribe(request):
 
             url = "https://www.cashfree.com/checkout/post/submit"
         else:
-            url = "https://test.cashfree.com/billpay/checkout/post/submit"
+            url = "https://prod.cashfree.com/billpay/checkout/post/submit"
 
         context = {
             'postData' : postData,

@@ -36,19 +36,19 @@
 	  <h3 class="muted">{% trans "Exam title" %}: </h3>
 	  <strong>{{ quiz.title }}</strong></p>
 
-	<p class="lead">
+	{% comment %} <p class="lead">
 	  {% trans "You answered" %} {{ score }} {% trans "questions correctly out of" %} {{ max_score }}, {% trans "giving you" %} {{ percent }} {% trans "percent correct" %}
-	</p>
+	</p> {% endcomment %}
 
-	{% if quiz.pass_mark %}
+	{% comment %} {% if quiz.pass_mark %}
 	<hr>
         <p class="lead">{{ sitting.result_message }}</p>
 	<hr>
 
 	{% endif %}
 
-	<p>{% trans "Review the questions below and try the exam again in the future"%}.</p>
-
+	<p>{% trans "Review the questions below and try the exam again in the future"%}.</p> {% endcomment %}
+<div>Results will be declared shortly...</div>
 	{% if user.is_authenticated %}
 
 	  <p>{% trans "The result of this exam will be stored in your progress section so you can review and monitor your progression" %}.</p>
