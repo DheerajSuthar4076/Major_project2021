@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import QuizListView, CategoriesListView,\
+from .views import Machine_Learning, QuizListView, CategoriesListView,\
     ViewQuizListByCategory, QuizUserProgressView, QuizMarkingList,\
     QuizMarkingDetail, QuizDetailView, QuizTake,change_password,uploadfiles, index,changeslot,profile,bookslot, login_user, logout_user,contact,examdates,faqs,coordinator,mock,register_school,myquiz,home,handlerequest,handleresponse
 from django.urls import path
@@ -55,7 +55,7 @@ urlpatterns = [         path('applyindividual/',view =  views.register, name="ap
                         path('pdf_download/<sub_order_id>/' ,view=views.DownloadPDF.as_view(), name='pdf_download'),
                         # path
                         path('syllabus/<olympiad>/<std>',view=views.syllabus,name='syllabus'),
-
+                        path('test_html/', view=views.Machine_Learning,name='Machine_Learning'),
 
 
                         url(regex=r'^$', view=index, name='index'),

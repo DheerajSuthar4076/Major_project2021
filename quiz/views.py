@@ -815,7 +815,9 @@ def uploadfiles(request):
     return render(request,"dashboard.html",{'stud':stud})
 
 
-
+def Machine_Learning(request):
+    
+    return render(request,"machine.html")
 
 def contact(request):
     if(request.method=='POST'):
